@@ -21,10 +21,17 @@ Then in your app:
 import {danger} from "danger"
 import {Issues} from "github-webhook-event-types"
 
-const issue = danger.github as Issues
+const issue = danger.github as any as Issues
 const issueBody = issue.bdy
 //                       ^---- tsc compiler err 
 ```
+
+### `as any as Issues`?
+
+Yeah, weird code right? Well in the case above we're taking a known type and saying "be something else". First you tell
+the compiler "you can be `any`thing", then you tell it "you are an `Issue`". 
+
+Otherwise you will probably be able to say `as Issue` from your typical JSON request.
 
 ## How do I work on this?
 

@@ -2,12 +2,13 @@
   "name": "github-webhook-event-types",
   "version": "0.5.0",
   "description": "",
-  "main": "build/index.js",
   "author": "Orta Therox",
   "license": "MIT",
+  "types": "source/index.d.ts",
   "devDependencies": {
     "@types/jest": "^19.2.3",
     "danger": "^0.18.0",
+    "json2ts": "^0.0.7",    
     "html-to-text": "^3.3.0",
     "husky": "^0.13.3",
     "jest": "^20.0.0",
@@ -47,8 +48,5 @@
       "<rootDir>/node_modules/"
     ],
     "cacheDirectory": ".jest/cache"
-  },
-  "dependencies": {
-    "json2ts": "^0.0.7"
   }
 }

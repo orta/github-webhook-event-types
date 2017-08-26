@@ -62,6 +62,7 @@ async function navigateWebsite() {
             objects.forEach(match => {
               const object = match.toString().split("export interface ")[1].trim()
               prefixedInterfaces = prefixedInterfaces
+                // Avoid making "CommentComment" kind of names
                 .replace(new RegExp(object + " ", "g"), element.name + object + " ")
                 .replace(new RegExp(object + ";", "g"), element.name + object + ";")
             })

@@ -1,0 +1,54 @@
+{
+  "name": "github-webhook-event-types",
+  "version": "0.5.0",
+  "description": "",
+  "main": "build/index.js",
+  "author": "Orta Therox",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^19.2.3",
+    "danger": "^0.18.0",
+    "html-to-text": "^3.3.0",
+    "husky": "^0.13.3",
+    "jest": "^20.0.0",
+    "lint-staged": "^3.2.5",
+    "simple-headless-chrome": "^4.3.1",
+    "ts-jest": "^20.0.0",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.2.0",
+    "typescript": "^2.3.2",
+    "xml2js": "^0.4.19"
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "build": "tsc",
+    "lint": "tslint 'src/**/*.{ts,tsx}'",
+    "precommit": "lint-staged",
+    "prepush": "npm run build"
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "tslint --fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(.test)\\.(ts|tsx)$",
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/"
+    ],
+    "cacheDirectory": ".jest/cache"
+  },
+  "dependencies": {
+    "json2ts": "^0.0.7"
+  }
+}

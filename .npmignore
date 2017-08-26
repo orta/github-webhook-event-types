@@ -1,0 +1,7 @@
+.editorconfig
+.travis.yml
+node_modules/
+tsconfig.json
+tslint.sjon
+.gitignore
+scripts/

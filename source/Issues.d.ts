@@ -36,7 +36,7 @@ export interface IssuesIssue {
   number: number;
   title: string;
   user: IssuesUser;
-  labels: Label[];
+  labels: IssuesLabel[];
   state: string;
   locked: boolean;
   assignee?: any;

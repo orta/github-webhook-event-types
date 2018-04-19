@@ -34,7 +34,7 @@ export interface IssueCommentIssue {
   number: number;
   title: string;
   user: IssueCommentIssueCommentUser;
-  labels: Label[];
+  labels: IssueCommentLabel[];
   state: string;
   locked: boolean;
   assignee?: any;

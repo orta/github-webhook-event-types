@@ -46,6 +46,9 @@ yarn install
 
 # Run the script to generate them
 yarn ts-node scripts/generate_types.ts
+
+# Run this to validate your changes
+yarn tsc
 ```
 
 ## What is this?

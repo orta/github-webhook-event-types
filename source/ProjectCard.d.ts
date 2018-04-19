@@ -25,8 +25,8 @@ export interface ProjectCardProject_card {
   id: number;
   note?: any;
   creator: ProjectCardCreator;
-  created_at: number;
-  updated_at: number;
+  created_at: string;
+  updated_at: string;
   content_url: string;
 }
 

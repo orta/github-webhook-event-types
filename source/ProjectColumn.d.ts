@@ -4,8 +4,8 @@ export interface ProjectColumnProject_column {
   cards_url: string;
   id: number;
   name: string;
-  created_at: number;
-  updated_at: number;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface ProjectColumnOwner {

@@ -23,7 +23,7 @@
   },
   "scripts": {
     "lint": "tslint 'source/**/*.{ts,tsx}'",
-    "prepush": "npm run build"
+    "prepush": "tsc"
   },
   "jest": {
     "moduleFileExtensions": [

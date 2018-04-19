@@ -11,6 +11,7 @@
     "max-classes-per-file": [
       false
     ],
+    "max-line-length":false,
     "member-access": [
       false,
       "check-accessor",

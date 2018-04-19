@@ -161,7 +161,7 @@ export interface Push {
   forced: boolean;
   base_ref?: any;
   compare: string;
-  commits: Commit[];
+  commits: PushCommit[];
   head_commit: PushHead_commit;
   repository: PushRepository;
   pusher: PushPusher;

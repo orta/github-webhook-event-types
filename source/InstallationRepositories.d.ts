@@ -58,6 +58,6 @@ export interface InstallationRepositories {
   installation: InstallationRepositoriesInstallation;
   repository_selection: string;
   repositories_added: any[];
-  repositories_removed: Repositories_removed[];
+  repositories_removed: InstallationRepositoriesRepositories_removed[];
   sender: InstallationRepositoriesSender;
 }

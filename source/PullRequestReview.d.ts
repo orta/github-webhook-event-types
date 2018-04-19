@@ -109,7 +109,7 @@ export interface PullRequestReviewPullRequestReviewRepo {
   owner: PullRequestReviewPullRequestReviewPullRequestReviewOwner;
   private: boolean;
   html_url: string;
-  description?: any;
+  description: string;
   fork: boolean;
   url: string;
   forks_url: string;

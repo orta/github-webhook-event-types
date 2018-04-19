@@ -118,7 +118,7 @@ export interface GollumSender {
 }
 
 export interface Gollum {
-  pages: Page[];
+  pages: GollumPage[];
   repository: GollumRepository;
   sender: GollumSender;
 }

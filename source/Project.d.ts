@@ -28,8 +28,8 @@ export interface ProjectProject {
   number: number;
   state: string;
   creator: ProjectCreator;
-  created_at: number;
-  updated_at: number;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface ProjectOwner {

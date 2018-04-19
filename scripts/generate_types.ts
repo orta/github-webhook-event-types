@@ -84,6 +84,7 @@ async function navigateWebsite() {
     }
 
     createIndex(events)
+    runFixes()
     await browser.close()
   } catch (error) {
     await browser.close()
@@ -96,14 +97,30 @@ const createIndex = (events: any[]) => {
   const exists = [] as string[]
   events.forEach(event => {
     if (fs.existsSync(`source/${event.name}.d.ts`)) {
-      indexContent += `import {${event.name}} from "./${event.name}"\n`
+      indexContent += `export { ${event.name} } from "./${event.name}"\n`
       exists.push(event.name)
     } else {
-      indexContent += `// import {${event.name}} from "./${event.name}"\n`
+      indexContent += `// export { ${event.name} } from "./${event.name}"\n`
     }
   })
-  indexContent += `\nexport {\n  ${exists.join(",\n  ")} }\n`
   fs.writeFileSync("source/index.d.ts", indexContent, { encoding: "utf8" })
+}
+
+const replaceTextInFile = (file: string, before: string, after: string) => {
+  const content = fs.readFileSync(file, "utf8")
+  fs.writeFileSync(file, content.replace(before, after), { encoding: "utf8" })
+}
+
+const runFixes = () => {
+  replaceTextInFile("source/Gollum.d.ts", "pages: Page[]", "pages: GollumPage[]")
+  replaceTextInFile("source/InstallationRepositories.d.ts",
+    "repositories_removed: Repositories_removed",
+    "repositories_removed: InstallationRepositoriesRepositories_removed")
+  replaceTextInFile("source/IssueComment.d.ts", "labels: Label[]", "labels: IssueCommentLabel[]")
+  replaceTextInFile("source/Issues.d.ts", "labels: Label[]", "labels: IssuesLabel[]")
+  replaceTextInFile("source/PullRequestReview.d.ts", "description?: any", "description: string")
+  replaceTextInFile("source/Push.d.ts", "commits: Commit", "commits: PushCommit")
+  replaceTextInFile("source/Status.d.ts", "branches: Branche", "branches: StatusBranche")
 }
 
 navigateWebsite()

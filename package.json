@@ -22,17 +22,8 @@
     "xml2js": "^0.4.19"
   },
   "scripts": {
-    "type-check": "tsc --noEmit",
-    "build": "tsc",
-    "lint": "tslint 'src/**/*.{ts,tsx}'",
-    "precommit": "lint-staged",
+    "lint": "tslint 'source/**/*.{ts,tsx}'",
     "prepush": "npm run build"
-  },
-  "lint-staged": {
-    "*.@(ts|tsx)": [
-      "tslint --fix",
-      "git add"
-    ]
   },
   "jest": {
     "moduleFileExtensions": [

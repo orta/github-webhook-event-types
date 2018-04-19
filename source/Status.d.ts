@@ -204,7 +204,7 @@ export interface Status {
   description?: any;
   state: string;
   commit: StatusStatusStatusCommit;
-  branches: Branche[];
+  branches: StatusBranche[];
   created_at: string;
   updated_at: string;
   repository: StatusRepository;

@@ -1,3 +1,6 @@
+This is now fully deprecated by [`@octokit/webhooks`](https://github.com/octokit/webhooks) which has more
+folks keeping it up to date, and the same webhook types. Use that instead.
+
 # github-webhook-event-types
 
 Converts the GitHub events on this page: https://developer.github.com/v3/activity/events/types/
